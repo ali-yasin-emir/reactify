@@ -13,11 +13,11 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="flex size-full flex-col gap-4">
-        <Link href="/" className="sidebar-logo">
+        <Link href="/" className="sidebar-logo justify-center">
           <Image
-            src="/assets/images/logo-text.svg"
+            src="/assets/images/reactify_logo.png"
             alt="logo"
-            width={180}
+            width={160}
             height={28}
           />
         </Link>
@@ -67,7 +67,6 @@ const Sidebar = () => {
                         alt={link.label}
                         width={24}
                         height={24}
-                        className={`${isActive && "brightness-200"}`}
                       />
                       {link.label}
                     </Link>

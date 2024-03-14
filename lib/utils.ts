@@ -1,3 +1,4 @@
+import { aspectRatioOptions } from "@/constants";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -21,4 +22,20 @@ export const handleError = (error: unknown) => {
     console.error(error);
     throw new Error(`Unknown error: ${JSON.stringify(error)}`);
   }
+};
+
+export type AspectRatioKey = keyof typeof aspectRatioOptions;
+
+export const getImageSize = (
+  type: string,
+  image: any,
+  dimension: "width" | "height"
+): number => {
+  if (type === "fill") {
+    return (
+      aspectRatioOptions[image.aspectRatio as AspectRatioKey]?.[dimension] ||
+      1000
+    );
+  }
+  return image?.[dimension] || 1000;
 };

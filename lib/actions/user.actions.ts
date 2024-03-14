@@ -19,7 +19,7 @@ export const createUser = async (user: CreateUserParams) => {
 };
 
 // READ
-export async function getUserById(userId: string) {
+export const getUserById = async (userId: string) => {
   try {
     await connectToDatabase();
 
@@ -31,10 +31,10 @@ export async function getUserById(userId: string) {
   } catch (error) {
     handleError(error);
   }
-}
+};
 
 // UPDATE
-export async function updateUser(clerkId: string, user: UpdateUserParams) {
+export const updateUser = async (clerkId: string, user: UpdateUserParams) => {
   try {
     await connectToDatabase();
 
@@ -48,10 +48,10 @@ export async function updateUser(clerkId: string, user: UpdateUserParams) {
   } catch (error) {
     handleError(error);
   }
-}
+};
 
 //DELETE
-export async function deleteUser(clerkId: string) {
+export const deleteUser = async (clerkId: string) => {
   try {
     await connectToDatabase();
 
@@ -70,4 +70,4 @@ export async function deleteUser(clerkId: string) {
   } catch (error) {
     handleError(error);
   }
-}
+};
